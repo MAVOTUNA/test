@@ -13,7 +13,11 @@ public class Test {
         User user2 = new User();
         user.setUserId("기효주");
         user.setUserId("2345");
-        
+
+        /**
+         * 테스트 입니다 .
+         */
+
         List<User> userList = new ArrayList<>();
         userList.add(user);
         userList.add(user2);
