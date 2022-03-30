@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<body>
+    <input type="text" id="testInput" placeholder="자동완성">
+</body>
+<script>
+    $("#testInput").autocomplete({
+        source:function (request,response) {
+            $.ajax({
+                url : "/test/autocomplete",
+                type : "GET" ,
+                data : {keyWord : $("#testInput").val()},
+                success:function (data) {
+                    response(
+                        $.map(data, function (item){
+                            return {
+                                label:item.testNm
+                            }
+                        })
+                    )
+                }
+
+
+            })
+
+        }
+    })
+
+</script>
+</html>

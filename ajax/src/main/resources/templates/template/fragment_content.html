@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="content">
+    <form th:action th:object="${user}">
+        <input type="text" th:field="*{name}">
+        <br>
+        <input type="text" th:field="*{age}">
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>

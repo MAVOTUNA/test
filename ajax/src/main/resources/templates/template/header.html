@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header">
+    <th:block th:with="user=${#session.getAttribute('test')}">
+    <p th:text="${user.age}"></p>
+    </th:block>
+</div>
+</body>
+</html>
